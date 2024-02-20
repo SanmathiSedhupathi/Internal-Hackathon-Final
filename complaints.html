@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Complaints - College Hostel</title>
+  <!-- Integrate Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    /* Custom CSS for animations */
+    @keyframes fade-in {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    @keyframes slide-in {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(0); }
+    }
+    .animate-fade-in {
+      animation: fade-in 1s ease-out;
+    }
+    .animate-slide-in {
+      animation: slide-in 1s ease-out;
+    }
+    /* Parallax scrolling effect */
+    .parallax-bg {
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    /* Hover animation for buttons */
+    .hover-animation:hover {
+      transform: translateY(-2px);
+      transition: all 0.3s ease;
+    }
+  </style>
+</head>
+<body class="bg-white">
+  <!-- Header Section -->
+  <header class="bg-red-500 py-6">
+    <div class="container mx-auto">
+      <h1 class="text-white text-4xl font-bold text-center">Student Complaints - College Hostel</h1>
+    </div>
+  </header>
+  
+  <!-- Main Content Section -->
+  <main>
+    <!-- Complaints Section -->
+    <section class="py-12">
+      <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-slide-in">
+        <!-- Complaint 1 -->
+        <div class="complaint bg-white shadow-md rounded-md p-6 animate-fade-in">
+          <h2 class="text-xl font-semibold text-black mb-2">Complaint 1</h2>
+          <p><strong>Name:</strong> Sanmathi</p>
+          <p><strong>Email:</strong> sanmathis.22msc@kongu.edu</p>
+          <p><strong>Year:</strong> 2 </p>
+          <p><strong>Department:</strong> B.Tech-FT</p>
+          <p><strong>Hostel:</strong> AMARAVATHI Hostel</p>
+          <p><strong>Time Stamp:</strong> 20 Feburary, 2024</p>
+          <p class="text-gray-600 mt-4">The water pipe in 2nd floor of our hostel has been leaking for 2 days.</p>
+          <!-- Add image if complaint has one -->
+          <img src="https://www.mrplumber.sg/wp-content/uploads/2017/04/water-pipe-leak-singapore-2.jpg" alt="Complaint Image" class="mt-4">
+          <button class="bg-red-500 text-white px-4 py-2 rounded-lg mt-4 hover-animation">Noted</button>
+        </div>
+        
+        <!-- Complaint 2 -->
+        <div class="complaint bg-white shadow-md rounded-md p-6 animate-fade-in">
+          <h2 class="text-xl font-semibold text-black mb-2">Complaint 2</h2>
+          <p><strong>Name:</strong> Subiksha PR</p>
+          <p><strong>Email:</strong> subikshapr.22msc@kongu.edu</p>
+          <p><strong>Year:</strong> 2 </p>
+          <p><strong>Department:</strong>CT-PG </p>
+          <p><strong>Hostel:</strong>BHAVANI Hostel</p>
+          <p><strong>Time Stamp:</strong> 21 Feburary, 2024</p>
+          <p class="text-gray-600 mt-4">The floor in our mess is damaged and has a huge crack in it.</p>
+          <!-- Add image if complaint has one -->
+          <img src="https://monstersconcrete.com/wp-content/uploads/2018/03/Concrete-Floor-Damaged.jpg" alt="Complaint Image" class="mt-4">
+          <button class="bg-red-500 text-white px-4 py-2 rounded-lg mt-4 hover-animation">Noted</button>
+        </div>
+        
+        <!-- Add more complaints here -->
+      </div>
+    </section>
+  </main>
+</body>
+</html>

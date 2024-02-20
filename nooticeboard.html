@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Notice Board - Hotel Management</title>
+  <!-- Integrate Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    /* Custom CSS for animations */
+    @keyframes fade-in {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    @keyframes slide-in {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(0); }
+    }
+    .animate-fade-in {
+      animation: fade-in 1s ease-out;
+    }
+    .animate-slide-in {
+      animation: slide-in 1s ease-out;
+    }
+    /* Parallax scrolling effect */
+    .parallax-bg {
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  </style>
+</head>
+<body class="bg-white">
+  <!-- Header Section -->
+  <header class="bg-red-500 py-6">
+    <div class="container mx-auto">
+      <h1 class="text-white text-4xl font-bold text-center">Admin Notice Board</h1>
+    </div>
+  </header>
+  
+  <!-- Main Content Section -->
+  <main>
+    <!-- Notice Section 1 -->
+    <section class="py-12 parallax-bg" style="background-image: url('notice_bg1.jpg');">
+      <div class="container mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center animate-slide-in">
+          <div class="animate-fade-in">
+            <h2 class="text-3xl font-semibold text-black mb-4">Notice 1</h2>
+            <p class="text-gray-600 mb-6">Sports meet - A variety of sports competition to all hostel girls on March 23</p>
+            <button class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition duration-300">March 23</button>
+          </div>
+          <div class="animate-pulse">
+            <img src="https://thebridge.in/wp-content/uploads/2020/08/Girls-kabaddi-India.jpg" alt="Notice 1" class="w-full rounded-lg shadow-lg">
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Notice Section 2 -->
+    <section class="py-12 bg-gray-200">
+      <div class="container mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center animate-slide-in">
+          <div class="animate-fade-in">
+            <h2 class="text-3xl font-semibold text-black mb-4">Notice 2</h2>
+            <p class="text-gray-600 mb-6">Campus cleaning day on February 28</p>
+            <button class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition duration-300">February 28</button>
+          </div>
+          <div class="animate-pulse">
+            <img src="https://www.aimit.edu.in/wp-content/uploads/2022/02/ftrd-aimit-students-take-up-campus-cleaning-drive-980x736.jpg" alt="Notice 2" class="w-full rounded-lg shadow-lg">
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Notice Section 3 -->
+    <section class="py-12 parallax-bg" style="background-image: url('notice_bg3.jpg');">
+      <div class="container mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center animate-fade-in">
+          <div class="animate-fade-in">
+            <h2 class="text-3xl font-semibold text-black mb-4">Notice 3</h2>
+            <p class="text-gray-600 mb-6">Hostel day celebration on March 5.</p>
+            <button class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition duration-300">MARCH 5</button>
+          </div>
+          <div class="animate-pulse">
+            <img src="https://azbigmedia.com/wp-content/uploads/2020/03/concert-tips.png" alt="Notice 3" class="w-full rounded-lg shadow-lg">
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Suggestions Section -->
+    <section class="py-12 bg-white">
+      <div class="container mx-auto">
+        <h2 class="text-3xl font-semibold text-black mb-8 animate-slide-in">The above notices are in circulation.</h2>
+        <!-- Suggestions Content here -->
+      </div>
+    </section>
+  </main>
+</body>
+</html>
