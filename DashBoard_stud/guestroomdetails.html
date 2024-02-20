@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booked Rooms - Admin</title>
+  <!-- Integrate Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    /* Custom CSS for animations */
+    @keyframes fade-in {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    @keyframes slide-in {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(0); }
+    }
+    .animate-fade-in {
+      animation: fade-in 1s ease-out;
+    }
+    .animate-slide-in {
+      animation: slide-in 1s ease-out;
+    }
+    /* Hover animation for buttons */
+    .hover-animation:hover {
+      transform: translateY(-2px);
+      transition: all 0.3s ease;
+    }
+    /* Parallax scrolling effect */
+    .parallax-bg {
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  </style>
+</head>
+<body class="bg-white">
+  <!-- Header Section -->
+  <header class="bg-red-500 py-6">
+    <div class="container mx-auto">
+      <h1 class="text-white text-4xl font-bold text-center">Booked Rooms - Admin</h1>
+    </div>
+  </header>
+  
+  <!-- Main Content Section -->
+  <main>
+    <!-- Booked Rooms Section -->
+    <section class="py-12">
+      <div id="bookedRooms" class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-slide-in">
+        <!-- Booked rooms will be added dynamically here -->
+      </div>
+    </section>
+  </main>
+
+  <!-- JavaScript to handle form submission and dynamic container creation/deletion -->
+  <script>
+    // Function to handle form submission and dynamic container creation
+    function handleFormSubmission(event) {
+      event.preventDefault();
+      const form = event.target;
+      const formData = new FormData(form);
+      const bookedRoomsContainer = document.getElementById('bookedRooms');
+
+      // Create a new container for the booked room
+      const newContainer = document.createElement('div');
+      newContainer.classList.add('bg-gray-100', 'shadow-md', 'rounded-md', 'p-6', 'animate-fade-in');
+      newContainer.innerHTML = `
+        <h2 class="text-xl font-semibold text-black mb-2">${formData.get('name')}</h2>
+        <p><strong>Purpose of Stay:</strong> ${formData.get('purpose')}</p>
+        <p><strong>Number of Days:</strong> ${formData.get('days')}</p>
+        <p><strong>Arrival Date:</strong> ${formData.get('arrival')}</p>
+        <p><strong>Departure Date:</strong> ${formData.get('departure')}</p>
+        <p><strong>Number of Members:</strong> ${formData.get('members')}</p>
+        <p><strong>Hostel:</strong> ${formData.get('hostel')}</p>
+        <button class="bg-red-500 text-white px-4 py-2 rounded-lg mt-4 hover-animation" onclick="deleteContainer(this)">Delete</button>
+      `;
+      bookedRoomsContainer.appendChild(newContainer);
+      form.reset();
+    }
+
+    // Function to delete a container
+    function deleteContainer(button) {
+      const container = button.parentElement;
+      container.remove();
+    }
+
+    // Add form submission event listener
+    const form = document.getElementById('registrationForm');
+    form.addEventListener('submit', handleFormSubmission);
+  </script>
+</body>
+</html>
