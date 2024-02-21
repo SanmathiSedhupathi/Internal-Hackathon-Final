@@ -1,0 +1,116 @@
+<html>
+    <head>
+        <title>
+            main_home_style</title>
+        <style>
+            .login-button {
+                background-color: red;
+                border: none;
+                color: white;
+                padding: 10px 30px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 18px;
+                margin: 4px 2px;
+                cursor: pointer;
+                border-radius: 8px;
+              }
+              .btn{
+                padding-right: 40px;
+                position: absolute;
+                top: 35px;
+                right: 150px;
+              }
+              .btn2{
+                padding-right: 40px;
+                position: absolute;
+                left: 270px;
+                z-index: 4;
+              }
+              .login-button:hover {
+                background-color:navy;
+                color: white;
+              }
+              .img1
+              {
+                padding-right: 0px;
+                position: absolute;
+                bottom: 8px;
+                right: 16px;
+                z-index: 2;
+              }
+              .img2{
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                z-index: 1;
+
+              }
+              .img3{
+                position: absolute;
+                top: 20px;
+                left: 150px;
+                z-index: 5;
+
+              }
+             
+              .animation-text {
+                position: absolute;
+                top:240px;
+                left:30px;
+                font-family: Arial, sans-serif;
+                font-size: 40px;
+                text-align: center;
+                animation: slideUp 01s ease-in-out;
+                z-index: 3;
+              }
+              @keyframes slideUp {
+                from {
+                  transform: translateY(100%);
+                  opacity: 0;
+                }
+                to {
+                  transform: translateY(0%);
+                  opacity: 1;
+                }
+              }
+              .h1{
+                position: absolute;
+                top: 20px;
+                left: 215px;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                font-size: 28px;
+                z-index:6;
+
+              }
+        </style>
+        </head>
+    <body>
+        <div class="btn">
+            <a href="Login.html"><button class="login-button">Login</button>  </a>
+        </div>
+        <div class="img3">
+            <img src="l1.png" height="60px" width="50px">
+            </div>
+            <div class="h1">
+        <h1>KecHostel</h1>
+        </div>
+        <div class="img1">
+            <img src="hos2.png">
+            </div>
+            <div class="img2">
+                <img src="log2.png">
+                </div>
+                <div class="animation-text">
+                    <p>Discover,
+                    Connect,
+                    Thrive: Your Home Away.</p>
+                  <div class="btn2">
+                    <a href="home.html"><button class="login-button">Guest Visit</button>  </a>
+                </div>
+                </div>
+
+    </body>
+    
+    </html>
