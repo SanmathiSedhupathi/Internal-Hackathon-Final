@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="icon" type="x-icon" href="keclogo.png">
+    <title>Complaint Portal</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins';
+        }
+
+.nav-container {
+    width: 100%;
+}
+
+.navbar {
+    display: grid;
+    grid-template-columns: 0.2fr auto 1fr;
+    align-items: center;
+    height: 80px;
+    width: 100%;
+    max-width: 1720px;
+    margin: 0 auto;
+    background: #250821;
+}
+
+#navbar-logo {
+    justify-self: start;
+    margin-left: 20px;
+}
+
+#navbar-logo {
+    cursor: pointer;
+}
+
+.nav-menu {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    list-style: none;
+    text-align: center;
+    width: 70%;
+    justify-self: end;
+    align-items: center;
+}
+
+.nav-links {
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    font: bold;
+}
+
+.nav-links:hover {
+    color: white;
+    transition: all 0.2s ease-out;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background: rgb(16, 3, 47);
+} 
+
+@media screen and (max-width: 768px) {
+    .nav-container {
+        position: relative;
+    }
+
+    .nav-menu {
+        display: grid;
+        grid-template-columns: auto;
+        background: red;
+        margin: 0;
+        width: 100%;
+        position: absolute;
+        top: 80px;
+        left: -100%;
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+
+    #navbar-logo {
+        margin-left: 20px;
+    }
+
+    .nav-menu.active {
+        background: rgb(16, 3, 47);
+        left: 0;
+        opacity: 1;
+        transition: all 0.5s ease;
+    }
+
+    .nav-links {
+        text-align: center;
+        line-height: 30px;
+        width: 100%;
+        display: table;
+    }
+
+    .nav-links:hover {
+        color: red;
+        transition: all 0.4s ease-out;
+    }
+
+    .navbar {
+        width: 100%;
+    }
+
+    #mobile-menu {
+        position: absolute;
+        top: 20%;
+        right: 5%;
+        transform: translate(5%, 20%);
+    }
+
+    .menu-toggle .bar {
+        display: block;
+        cursor: pointer;
+    }
+
+    .menu-toggle:hover {
+        cursor: pointer;
+    }
+
+    #mobile-menu.is-active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    #mobile-menu.is-active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    #mobile-menu.is-active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+        .section {
+            position: relative;
+            display: flex;
+            justify-content: end;
+            align-items: end;
+            min-height: 100vh;
+            width: 40%;
+        }
+        .blob {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+        }
+        .blob:nth-child(2) {
+            filter: blur(50px);
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0;
+            height: 500px;
+            background: #250821;
+        }
+
+        .content {
+            max-width: 60%;
+            margin: 0 auto;
+            margin-left: 10px;
+            color: white;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+        .footer {
+	width: 100%;
+	background: rgb(16, 3, 47);
+	display: block;
+  font-family: Arial, Helvetica, sans-serif;
+ }
+
+ .inner-footer {
+	 width: 95%;
+	 margin: auto;
+	 padding: 30px 10px;
+	 display: flex;
+	 flex-wrap: wrap;
+	 box-sizing: border-box;
+	 justify-content: center;
+ }
+
+.footer-items {
+	width: 25%;
+	padding: 10px 20px;
+	box-sizing: border-box;
+	color: #fff;
+}
+
+.footer-items p {
+	font-size: 16px;
+	text-align: justify;
+	line-height: 25px;
+	color: #fff;
+}
+
+.footer-items h1 {
+	color: #fff;
+}
+
+.border1 {
+	height: 3px;
+	width: 40px;
+	background: red;
+	color: red;
+	background-color: red;
+	border: 0px;
+}
+
+ul {
+	list-style: none;
+	color: #fff;
+	font-size: 15px;
+	letter-spacing: 0.5px;	
+ }
+
+ul a {
+	text-decoration: none;
+	outline: none;
+	color: #fff;
+	transition: 0.3s;
+}
+
+ul a:hover {
+	color: red;
+}
+
+ul li {
+	margin: 10px 0;
+	height: 25px;
+}
+
+li i {
+	margin-right: 20px;
+}
+
+.social-media {
+	width: 100%;
+	color: #fff;
+	text-align: center;
+	font-size: 20px;
+}
+
+.social-media a {
+	text-decoration: none;
+}
+
+.social-media i {
+	height: 25px;
+	width: 25px;
+	margin: 20px 10px;
+	padding: 4px;
+	color: #fff;
+	transition: 0.5s;
+}
+
+.social-media i:hover {
+	transform: scale(1.5);
+}
+
+.footer-bottom {
+	padding: 10px;
+	background: rgb(16, 3, 47);
+	color: #fff;
+	font-size: 12px;
+	text-align: center;
+}
+
+/* for tablet mode view */
+
+@media screen and (max-width: 1275px) {
+	.footer-items {
+		width: 50%;
+	}
+}
+
+/* for mobile screen view */
+
+@media screen and (max-width: 660px) {
+	.footer-items {
+		width: 100%;
+	}
+}
+
+/*form*/
+.comp
+{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.comp .image
+{
+    width: 50%;
+	margin: auto;
+}
+form {
+        background-color: #f0f0f0; /* Grey background color */
+        padding: 20px;
+        border-radius: 10px;
+        width: 600px;
+        margin: 0 auto;
+    }
+
+    label {
+        font-weight: bold;
+        margin-bottom: 5px;
+        display: block;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    select,
+    textarea {
+        width: 100%;
+        padding: 8px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    button {
+        background-color: #45a049; 
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #45a049; 
+    }
+
+    /* Optional: Add more styling for specific input types, if needed */
+    input[type="text"]:focus,
+    input[type="tel"]:focus,
+    select:focus,
+    textarea:focus {
+        border: 2px solid #3498db;
+        outline: none;
+    }
+
+    /* Adjustments for smaller screens */
+    @media(max-width: 600px) {
+        form {
+            width: 100%;
+        }
+    }
+
+    </style>
+</head>
+<body>
+    <div class="nav-container">
+        <nav class="navbar">
+            <img id="navbar-logo" src="keclogo.png" alt="KEC" height="50px" width="50px">
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-links">Home</a></li>
+                <li><a href="#" class="nav-links">Notices</a></li>
+                <li><a href="#" class="nav-links">Contacts</a></li>
+                <li><a href="#" class="nav-links">Reviews</a></li>
+                <li><a href="#" class="nav-links">Profile</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="container">
+        <div class="content">
+            <p> Registering complaints isn't just about pointing out problems; it's the first step towards creating a nurturing and thriving hostel environment. Your feedback shapes a better tomorrow for everyone – where each concern addressed is a step closer to a harmonious and comfortable living space for all.</p><br><br>
+            <button><a href="#sectionOne" style="text-decoration: none;color: #fff;">Register Compliant</a></button>
+        </div>
+        <div class="section">
+            <div class="blob">
+                <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" id="blobSvg">
+                    <defs>
+                      <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color: rgb(254, 0, 82);"></stop>
+                        <stop offset="100%" style="stop-color: rgb(251, 2, 128);"></stop>
+                      </linearGradient>
+                    </defs>
+                    <path fill="url(#gradient)">
+                        <animate attributeName="d"
+                            dur="10000ms"
+                            repeatCount="indefinite"
+                            values="M448.5,320.5Q418,391,350.5,415.5Q283,440,207,448Q131,456,117,380Q103,304,104.5,250.5Q106,197,118.5,120.5Q131,44,203.5,73.5Q276,103,355.5,98.5Q435,94,457,172Q479,250,448.5,320.5Z;
+                            M448.5,326.5Q432,403,355,406Q278,409,219,407.5Q160,406,155.5,346Q151,286,139.5,246Q128,206,146,153.5Q164,101,217.5,117Q271,133,349.5,117Q428,101,446.5,175.5Q465,250,448.5,326.5Z;
+                            M403,322.5Q423,395,348,389Q273,383,227.5,375Q182,367,115,345Q48,323,83,262.5Q118,202,124,122Q130,42,204.5,63Q279,84,346,99Q413,114,398,182Q383,250,403,322.5Z;
+                            M448.5,320.5Q418,391,350.5,415.5Q283,440,207,448Q131,456,117,380Q103,304,104.5,250.5Q106,197,118.5,120.5Q131,44,203.5,73.5Q276,103,355.5,98.5Q435,94,457,172Q479,250,448.5,320.5Z">
+                       </animate>
+                    </path>
+                  </svg>
+            </div>
+    
+            <div class="blob">
+                <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" id="blobSvg">
+                    <defs>
+                      <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color: rgb(254, 0, 82);"></stop>
+                        <stop offset="100%" style="stop-color: rgb(251, 2, 128);"></stop>
+                      </linearGradient>
+                    </defs>
+                    <path fill="url(#gradient)">
+                        <animate attributeName="d"
+                            dur="10000ms"
+                            repeatCount="indefinite"
+                            values="M448.5,320.5Q418,391,350.5,415.5Q283,440,207,448Q131,456,117,380Q103,304,104.5,250.5Q106,197,118.5,120.5Q131,44,203.5,73.5Q276,103,355.5,98.5Q435,94,457,172Q479,250,448.5,320.5Z;
+                            M448.5,326.5Q432,403,355,406Q278,409,219,407.5Q160,406,155.5,346Q151,286,139.5,246Q128,206,146,153.5Q164,101,217.5,117Q271,133,349.5,117Q428,101,446.5,175.5Q465,250,448.5,326.5Z;
+                            M403,322.5Q423,395,348,389Q273,383,227.5,375Q182,367,115,345Q48,323,83,262.5Q118,202,124,122Q130,42,204.5,63Q279,84,346,99Q413,114,398,182Q383,250,403,322.5Z;
+                            M448.5,320.5Q418,391,350.5,415.5Q283,440,207,448Q131,456,117,380Q103,304,104.5,250.5Q106,197,118.5,120.5Q131,44,203.5,73.5Q276,103,355.5,98.5Q435,94,457,172Q479,250,448.5,320.5Z">
+                       </animate>
+                    </path>
+                  </svg>
+            </div>
+        </div>
+        </div><br><br>
+        <div class="complaint">
+            <a name='sectionOne' />
+            <div class="comp">
+                <div class="image">
+                    <img src="complaint1.png" alt="complaint" style="width: 100%;">
+                </div>
+                <div class="complaint">
+                    <form id="stComplaint">
+                        <div style="display: flex;flex-direction: row;align-items: center;justify-content: space-between;width: 100%;">
+                            <div width="50%">
+                                <label for="fname">First Name</label><br>
+                                <input type="text" id="fname" placeholder="First Name" name="fname" required>
+                            </div>
+                            <div style="margin-right: 5px;">
+                                <label for="lname">Last Name  </label><br>
+                                <input type="text" id="lname" placeholder="Last Name" name="lname">
+                            </div>
+                        </div>
+                        <div style="display: flex;flex-direction: row;align-items: center;justify-content: space-between;width: 100%;">
+                            <div width="50%">
+                                <label for="phoneNumber" >Phone Number</label><br>
+                                <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber" required><br>
+                            </div>
+                            <div style="margin-right: 5px;">
+                                <label for="email">Email Address</label><br>
+                                <input id="email" type="text" name="email" placeholder="Please enter your email" value="" pattern="[a-z0-9._%+-]+@(gmail|yahoo)\.com$" required><br>
+                            </div>
+                        </div>
+                        <div style="display: flex;flex-direction: row;align-items: center;justify-content: space-between;width: 100%;">
+                            <div width="50%">
+                                <label for="complaintType">Hostel Name</label><br>
+                                <select class="form-control" id="hostelname" name="hostelname"><br>
+                                <option value="" disabled selected>Select</option>
+                                <option value="amaravathi">Amaravathi</option>
+                                <option value="bharathi">Bharathi</option>
+                                <option value="dheeran">Dheeran</option>
+                                <option value="ilango">Ilango</option>
+                                <option value="kamban">Kamban</option>
+                                <option value="ponnar">Ponnar</option>
+                                <option value="sankar">Sankar</option>
+                                <option value="valluvar">Valluvar</option>
+                        </select><br><br>
+                            </div>
+                            <div style="margin-right: 5px;">
+                                <label for="roomNumber">Room Number</label><br>
+                                <input type="text" class="form-control" id="roomNumber" name="roomNumber" required><br>
+                            </div>
+                        </div>
+                        <label for="complaintType">Complaint Type</label><br>
+                        <select class="form-control" id="complaintType" name="complaintType"><br>
+                        <option value="" disabled selected>Select</option>
+                        <option value="electricity">Electricity</option>
+                        <option value="plumbing">Plumbing</option>
+                        <option value="cleaning">Cleaning</option>
+                        <option value="food">Food</option>
+                        <option value="others">Others</option>
+                        </select><br><br>
+                        <label for="complaintDescription">Complaint Description</label><br>
+                        <textarea class="form-control" id="complaintDescription" name="complaintDescription" rows="3" style="height: 100px;width: 550px;"></textarea>
+                        <div style="margin-left: 230px;">
+                            <button type="button" onclick="validateForm()">Submit</button>
+                        </div>     
+                    </form>
+                </div>
+            </div><br><br><br>
+            <!--Footer-->
+            <div class="footer">
+                <div class="inner-footer">
+              
+              <!--  for company name and description -->
+                  <div class="footer-items">
+                    <h1>KEC HOSTEL</h1>
+                    <p>Kongu Engineering College, Perundurai.</p>
+                  </div>
+              
+              <!--  for quick links  -->
+                  <div class="footer-items">
+                    <h3>Quick Links</h3>
+                    <div class="border1"></div> <!--for the underline -->
+                      <ul>
+                        <a href="#"><li>Home</li></a>
+                        <a href="#"><li>Search</li></a>
+                        <a href="#"><li>Contact</li></a>
+                        <a href="#"><li>About</li></a>
+                      </ul>
+                  </div>
+              
+              <!--  for some other links -->
+                  <div class="footer-items">
+                    <h3>Get in Touch</h3>
+                    <div class="border1"></div>  <!--for the underline -->
+                      <ul>
+                        
+                            <li> <a href="#"><i class="fa fa-instagram"></i></a>Instagram</li>
+                            <li><a href="#"><i class="fa fa-facebook"></i></a>FaceBook</li>
+                            <li><a href="#"><i class="fa fa-google-plus-square"></i></a>Google</li>
+                        
+                      </ul>
+                  </div>
+              
+              <!--  for contact us info -->
+                  <div class="footer-items">
+                    <h3>Contact us</h3>
+                    <div class="border1"></div>
+                      <ul>
+                        <li><i class="fa fa-map-marker" aria-hidden="true"></i>XYZ, abc</li>
+                        <li><i class="fa fa-phone" aria-hidden="true"></i>123456789</li>
+                        <li><i class="fa fa-envelope" aria-hidden="true"></i>xyz@gmail.com</li>
+                      </ul> 
+                  </div>
+                </div>
+                
+              <!--   Footer Bottom start  -->
+                <div class="footer-bottom">
+                  Copyright &copy; KEC Hostel 2024.
+                </div>
+            </div>
+            <script src="compliant_cpy.js"></script>
+        </body>
+        </html>
