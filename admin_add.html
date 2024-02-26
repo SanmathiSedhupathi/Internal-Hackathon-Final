@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="admin_add.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="icon" type="x-icon" href="keclogo.png">
+    <title>Admin Portal</title>
+</head>
+<body>
+    <div class="nav-container">
+        <nav class="navbar">
+            <img id="navbar-logo" src="keclogo.png" alt="KEC" height="50px" weight="50px">
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-links">Home</a></li>
+                <li><a href="#" class="nav-links">Notices</a></li>
+                <li><a href="#" class="nav-links">Contacts</a></li>
+                <li><a href="#" class="nav-links">Reviews</a></li>
+                <li><a href="#" class="nav-links">Profile</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="container">
+        <div class="blur"></div>
+        <div class="text">
+            <h2>Admin Portal</h2><br><br>
+            <p style="font-size: 20px;"> "Efficient system is the cornerstone of fostering a secure and comfortable home away from home."</p><br>
+            <button class="add-button"><a style="text-decoration: none;color: #fff;" href="#sectionOne">Add Members</a></button><br>
+            <button class="btn" onclick="viewMembers()">View Members</button>
+        </div>
+        <div class="blobs">
+            <div class="blob large">
+                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="#FA4D56" d="M63.7,-23.8C70.9,1.5,57.1,30.5,35.8,44.9C14.5,59.4,-14.2,59.3,-33.2,45.5C-52.2,31.8,-61.5,4.4,-54.3,-20.9C-47.2,-46.1,-23.6,-69.2,2.3,-70C28.3,-70.8,56.5,-49.2,63.7,-23.8Z" transform="translate(100 100)" />
+                </svg>
+            </div>
+            <div class="blob">
+                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="#FA4D56" d="M70.4,-17.3C77.9,0.1,61.3,30.8,38.5,45.7C15.6,60.6,-13.5,59.7,-31.9,45.9C-50.3,32.1,-58,5.4,-50.9,-11.5C-43.8,-28.4,-21.9,-35.5,4.8,-37C31.5,-38.6,63,-34.6,70.4,-17.3Z" transform="translate(100 100)" />
+                  </svg>
+            </div>
+        </div>
+    </div>
+    <div class="fcontainer">
+        <a name='sectionOne' />
+        <div class="options">
+            <div class="option selected" onclick="showOption(1)">Student</div>
+            <div class="option" onclick="showOption(2)">Admin</div>
+        </div>
+
+        <div class="content">
+            <div class="form active" id="option1">
+                <label for="member">Member:</label>
+                <input type="text" id="member" name="member" placeholder="Member" readonly value="Student">
+
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name">
+
+                <label for="rollno">Roll No:</label>
+                <input type="text" id="rollno" name="rollno" placeholder="Enter your roll number">
+
+                <label for="department">Department:</label>
+                <select id="department" name="department">
+                    <option value="civil">Civil Engineering</option>
+                    <option value="mech">Mechanical Engineering</option>
+                    <option value="mechatronics">Mechatronics Engineering</option>
+                    <option value="Automobile">Automobile Engineering</option>
+                    <option value="chemical">Chemical Engineering</option>
+                    <option value="foodtech">Food Technology</option>
+                    <option value="eee">EEE</option>
+                    <option value="ece">ECE</option>
+                    <option value="cse">CSE</option>
+                    <option value="it">IT</option>
+                    <option value="csd">CSD</option>
+                    <option value="mba">MBA</option>
+                    <option value="mca">MCA</option>
+                    <option value="ctpg">CT-PG</option>
+                    <option value="ctug">CT-UG</option>
+                    <option value="me">ME</option>
+                    <option value="mtech">M.Tech</option>
+                </select>
+
+                <label for="rollno">Year:</label>
+                <input type="text" id="year" name="year" placeholder="Year of study">
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" pattern="[0-9]{10}">
+
+                <label for="parentPhone">Parent's/Guardian's Phone Number:</label>
+                <input type="tel" id="parentPhone" name="parentPhone" placeholder="Enter parent's/guardian's phone number" pattern="[0-9]{10}">
+
+                <label for="email">Email ID:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email">
+
+                <label for="hostel">Hostel Name:</label>
+                <select id="hostel" name="hostel">
+                    <option value="amaravathi">Amaravathi</option>
+                                <option value="bharathi">Bharathi</option>
+                                <option value="dheeran">Dheeran</option>
+                                <option value="ilango">Ilango</option>
+                                <option value="kamban">Kamban</option>
+                                <option value="ponnar">Ponnar</option>
+                                <option value="sankar">Sankar</option>
+                                <option value="valluvar">Valluvar</option>
+                </select>
+
+                <label for="roomNo">Room No:</label>
+                <input type="text" id="roomNo" name="roomNo" placeholder="Enter your room number">
+
+                <label for="photo">Passport Size Photo (.jpg or .jpeg):</label>
+                <input type="file" id="photo" name="photo" accept=".jpg, .jpeg">
+
+                <button class="b" type="button" onclick="validateForm()">Submit</button>
+            </div>
+
+            <div class="form" id="option2">
+                <!-- Add fields for Option 2 as needed -->
+                    <label for="member">Member:</label>
+                    <input type="text" id="member" name="member" placeholder="Member" readonly value="Admin">
+    
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name">
+    
+                    <label for="department">Department:</label>
+                    <select id="department" name="department">
+                    <option value="civil">Civil Engineering</option>
+                    <option value="mech">Mechanical Engineering</option>
+                    <option value="mechatronics">Mechatronics Engineering</option>
+                    <option value="Automobile">Automobile Engineering</option>
+                    <option value="chemical">Chemical Engineering</option>
+                    <option value="foodtech">Food Technology</option>
+                    <option value="eee">EEE</option>
+                    <option value="ece">ECE</option>
+                    <option value="cse">CSE</option>
+                    <option value="it">IT</option>
+                    <option value="csd">CSD</option>
+                    <option value="mba">MBA</option>
+                    <option value="mca">MCA</option>
+                    <option value="ctpg">CT-PG</option>
+                    <option value="ctug">CT-UG</option>
+                    <option value="me">ME</option>
+                    <option value="mtech">M.Tech</option>
+                    </select>
+    
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" pattern="[0-9]{10}">
+    
+                    <label for="email">Email ID:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email">
+    
+                    <label for="hostel">Hostel Name:</label>
+                    <select id="hostel" name="hostel">
+                        <option value="amaravathi">Amaravathi</option>
+                                <option value="bharathi">Bharathi</option>
+                                <option value="dheeran">Dheeran</option>
+                                <option value="ilango">Ilango</option>
+                                <option value="kamban">Kamban</option>
+                                <option value="ponnar">Ponnar</option>
+                                <option value="sankar">Sankar</option>
+                                <option value="valluvar">Valluvar</option>
+                    </select>
+    
+                    <label for="roomNo">Room No:</label>
+                    <input type="text" id="roomNo" name="roomNo" placeholder="Enter your room number">
+    
+                    <label for="photo">Passport Size Photo (.jpg or .jpeg):</label>
+                    <input type="file" id="photo" name="photo" accept=".jpg, .jpeg">
+    
+                    <button class="b" type="button" onclick="validateForm()">Submit</button>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="inner-footer">
+      
+      <!--  for company name and description -->
+          <div class="footer-items">
+            <h1>KEC HOSTEL</h1>
+            <p>Kongu Engineering College, Perundurai.</p>
+          </div>
+      
+      <!--  for quick links  -->
+          <div class="footer-items">
+            <h3>Quick Links</h3>
+            <div class="border1"></div> <!--for the underline -->
+              <ul>
+                <a href="#"><li>Home</li></a>
+                <a href="#"><li>Search</li></a>
+                <a href="#"><li>Contact</li></a>
+                <a href="#"><li>About</li></a>
+              </ul>
+          </div>
+      
+      <!--  for some other links -->
+          <div class="footer-items">
+            <h3>Get in Touch</h3>
+            <div class="border1"></div>  <!--for the underline -->
+              <ul>
+                
+                    <li> <a href="#"><i class="fa fa-instagram"></i></a>Instagram</li>
+                    <li><a href="#"><i class="fa fa-facebook"></i></a>FaceBook</li>
+                    <li><a href="#"><i class="fa fa-google-plus-square"></i></a>Google</li>
+                
+              </ul>
+          </div>
+      
+      <!--  for contact us info -->
+          <div class="footer-items">
+            <h3>Contact us</h3>
+            <div class="border1"></div>
+              <ul>
+                <li><i class="fa fa-map-marker" aria-hidden="true"></i>XYZ, abc</li>
+                <li><i class="fa fa-phone" aria-hidden="true"></i>123456789</li>
+                <li><i class="fa fa-envelope" aria-hidden="true"></i>xyz@gmail.com</li>
+              </ul> 
+          </div>
+        </div>
+        
+      <!--   Footer Bottom start  -->
+        <div class="footer-bottom">
+          Copyright &copy; KEC Hostel 2024.
+        </div>
+    </div>
+
+    <script>
+        function showOption(optionNumber) {
+            document.querySelectorAll('.form').forEach(form => {
+                form.classList.remove('active');
+            });
+
+            document.getElementById(`option${optionNumber}`).classList.add('active');
+
+            document.querySelectorAll('.option').forEach(option => {
+                option.classList.remove('selected');
+            });
+
+            document.querySelector(`.option:nth-child(${optionNumber})`).classList.add('selected');
+        }
+
+        function validateForm() {
+            const name = document.getElementById('name').value.trim();
+            const department = document.getElementById('department').value;
+            const phone = document.getElementById('phone').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const hostel = document.getElementById('hostel').value;
+            const roomNo = document.getElementById('roomNo').value.trim();
+            const photo = document.getElementById('photo').value.trim();
+
+            if (!name || !department || !phone  || !email || !hostel || !roomNo || !photo) {
+                alert('Please fill in all the required fields.');
+            } else {
+                alert('Form submitted successfully!');
+            }
+        }
+    </script>
+</body>
+</html>
