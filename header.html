@@ -1,0 +1,157 @@
+<div class="nav-container">
+    <nav class="navbar">
+        <img id="navbar-logo" src="keclogo.png" alt="KEC" height="50px" weight="50px">
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="#" class="nav-links">Home</a></li>
+            <li><a href="#" class="nav-links">Notices</a></li>
+            <li><a href="#" class="nav-links">Contacts</a></li>
+            <li><a href="#" class="nav-links">Reviews</a></li>
+            <li><a href="#" class="nav-links">Profile</a></li>
+        </ul>
+    </nav>
+</div>
+
+
+.nav-container {
+    width: 100%;
+}
+
+.navbar {
+    display: grid;
+    grid-template-columns: 0.2fr auto 1fr;
+    align-items: center;
+    height: 80px;
+    width: 100%;
+    max-width: 1720px;
+    margin: 0 auto;
+    background: white;
+}
+
+#navbar-logo {
+    justify-self: start;
+    margin-left: 20px;
+}
+
+#navbar-logo {
+    cursor: pointer;
+}
+
+.nav-menu {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    list-style: none;
+    text-align: center;
+    width: 70%;
+    justify-self: end;
+    align-items: center;
+}
+
+.nav-links {
+    text-decoration: none;
+    color: rgb(16, 3, 47);
+    text-align: center;
+    font-size: 20px;
+    font: bold;
+}
+
+.nav-links:hover {
+    color: red;
+    transition: all 0.2s ease-out;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background: rgb(16, 3, 47);
+} 
+
+@media screen and (max-width: 768px) {
+    .nav-container {
+        position: relative;
+    }
+
+    .nav-menu {
+        display: grid;
+        grid-template-columns: auto;
+        background: red;
+        margin: 0;
+        width: 100%;
+        position: absolute;
+        top: 80px;
+        left: -100%;
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+
+    #navbar-logo {
+        margin-left: 20px;
+    }
+
+    .nav-menu.active {
+        background: white;
+        left: 0;
+        opacity: 1;
+        transition: all 0.5s ease;
+    }
+
+    .nav-links {
+        text-align: center;
+        line-height: 30px;
+        width: 100%;
+        display: table;
+    }
+
+    .nav-links:hover {
+        color: red;
+        transition: all 0.4s ease-out;
+    }
+
+    .navbar {
+        width: 100%;
+    }
+
+    #mobile-menu {
+        position: absolute;
+        top: 20%;
+        right: 5%;
+        transform: translate(5%, 20%);
+    }
+
+    .menu-toggle .bar {
+        display: block;
+        cursor: pointer;
+    }
+
+    .menu-toggle:hover {
+        cursor: pointer;
+    }
+
+    #mobile-menu.is-active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    #mobile-menu.is-active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    #mobile-menu.is-active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+
+
+const menu = document.querySelector('#mobile-menu');
+const menulinks = document.querySelector('.nav-menu');
+
+menu.addEventListener('click',function() {
+    menu.classList.toggle('is-active');
+    menulinks.classList.toggle('active');
+})
